@@ -1,1 +1,15 @@
+username = "user123"
+password = "password123"
 
+# Simulate user input
+input_username = input("Enter your username: ")
+input_password = input("Enter your password: ")
+
+if input_username == username and input_password == password:
+    print("Login successful! Welcome.")
+elif input_username == username:
+    print("Incorrect password.")
+elif input_password == password:
+    print("Incorrect username.")
+else:
+    print("Invalid credentials. Please try again.")
