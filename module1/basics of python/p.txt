@@ -34,3 +34,36 @@ for i, name in enumerate(callable_builtins):
     if i >= 20: # Displaying first 20 callable built-ins
         break
 
+3.
+# This entire cell can be thought of as a 'module'
+
+# Function defined directly in the 'module' (global scope of this cell)
+def greet_user(name):
+    """A simple function to greet a user."""
+    return f"Hello, {name}! Welcome to the module."
+
+# Class defined in the 'module'
+class UserManager:
+    """A class to manage user-related operations."""
+
+    def __init__(self, username):
+        self.username = username
+
+    # Method defined inside the class, which is inside the 'module'
+    def display_greeting(self):
+        """A method that uses the module-level greet_user function."""
+        message = greet_user(self.username) # Calling the module-level function
+        print(f"Inside UserManager method: {message}")
+
+# --- Demonstration of usage ---
+
+# Use the module-level function
+print(greet_user("Alice"))
+
+# Create an instance of the class and use its method
+user_manager = UserManager("Bob")
+user_manager.display_greeting()
+
+# You can also access the function directly via the module if it were imported
+# (e.g., if this code was in a file named `my_module.py` and you did `import my_module`)
+# print(my_module.greet_user("Charlie"))
