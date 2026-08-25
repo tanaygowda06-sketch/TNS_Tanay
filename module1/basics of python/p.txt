@@ -1,3 +1,4 @@
+1.
 username = "user123"
 password = "password123"
 
@@ -12,3 +13,24 @@ elif input_password == password:
     print("Incorrect username.")
 else:
     print("Invalid credentials. Please try again.")
+
+2.
+import builtins
+
+print("--- All Built-in Names ---")
+# Use dir(__builtins__) to get a list of all built-in names
+all_builtins = dir(builtins)
+print(f"Total built-in names: {len(all_builtins)}")
+print(all_builtins[:10]) # Displaying first 10 for brevity
+
+print("\n--- Callable Built-in Functions/Methods ---")
+# Filter for callable built-ins (functions, methods, classes)
+callable_builtins = [name for name in all_builtins if callable(getattr(builtins, name))]
+print(f"Total callable built-in functions/methods: {len(callable_builtins)}")
+
+# Display some of them
+for i, name in enumerate(callable_builtins):
+    print(name)
+    if i >= 20: # Displaying first 20 callable built-ins
+        break
+
